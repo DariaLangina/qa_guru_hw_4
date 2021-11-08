@@ -1,7 +1,7 @@
 package langina.tests;
 
-import pages.RegistrationData;
-import pages.RegistrationPage;
+import langina.pages.RegistrationData;
+import langina.pages.RegistrationPage;
 
 public class TestBase {
   RegistrationPage registrationPage = new RegistrationPage();

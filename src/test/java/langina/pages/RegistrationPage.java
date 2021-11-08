@@ -1,4 +1,4 @@
-package pages;
+package langina.pages;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static java.time.Duration.ofSeconds;
 
 import com.codeborne.selenide.SelenideElement;
-import fragments.Calendar;
+import langina.components.Calendar;
 
 public class RegistrationPage extends RegistrationData {
 

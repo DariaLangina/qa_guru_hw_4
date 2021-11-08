@@ -1,4 +1,4 @@
-package pages;
+package langina.pages;
 
 import com.github.javafaker.Faker;
 import java.util.Locale;
