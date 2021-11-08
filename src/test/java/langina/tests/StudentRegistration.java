@@ -1,11 +1,15 @@
 package langina.tests;
 
+import langina.pages.RegistrationData;
+import langina.pages.RegistrationPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class StudentRegistration extends TestBase {
 
+  RegistrationPage registrationPage = new RegistrationPage();
+  RegistrationData user = new RegistrationData();
 
   @BeforeEach
   void ensurePrecondition() {

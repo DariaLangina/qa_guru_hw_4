@@ -10,7 +10,7 @@ import static java.time.Duration.ofSeconds;
 import com.codeborne.selenide.SelenideElement;
 import langina.components.Calendar;
 
-public class RegistrationPage extends RegistrationData {
+public class RegistrationPage {
 
   public Calendar calendar = new Calendar();
 
