@@ -6,22 +6,33 @@ plugins {
 repositories {
     mavenCentral()
 }
-def junitVersion = "5.8.1"
+def allureVersion = "2.16.1",
+    junitVersion = "5.8.1"
 
-dependencies {
-    testImplementation(
-            "com.codeborne:selenide:6.0.3",
-            "com.github.javafaker:javafaker:1.0.2",
-            "org.junit.jupiter:junit-jupiter:$junitVersion")
-    testRuntimeOnly(
-            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+allure {
+    version = allureVersion
+    autoconfigure = true
+    aspectjweaver = true
+    configuration = "testImplementation"
+    useJUnit5 {
+        version = allureVersion
+    }
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
+    dependencies {
+        testImplementation(
+                "com.codeborne:selenide:6.0.3",
+                "com.github.javafaker:javafaker:1.0.2",
+                "org.junit.jupiter:junit-jupiter:$junitVersion")
+        testRuntimeOnly(
+                "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    }
 
-tasks.withType(Test) {
-    useJUnitPlatform()
-}
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    tasks.withType(Test) {
+        useJUnitPlatform()
+    }
 
