@@ -12,7 +12,7 @@ public class TestBase {
 
   @BeforeAll
   public static void config() {
-    Configuration.browserSize = "1024x765";
+    Configuration.startMaximized = true;
 
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
