@@ -1,9 +1,8 @@
 package langina.tests;
 
-import static com.codeborne.selenide.Selenide.open;
-
 import langina.pages.RegistrationData;
 import langina.pages.RegistrationPage;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,15 +11,14 @@ public class StudentRegistration extends TestBase {
   RegistrationPage registrationPage = new RegistrationPage();
   RegistrationData user = new RegistrationData();
 
-//  @BeforeEach
-//  void ensurePrecondition() {
-//    registrationPage.openPage();
-//  }
+  @BeforeEach
+  void ensurePrecondition() {
+    registrationPage.openPage();
+  }
 
   @Test
   @DisplayName("Регистрация с заполнением дополнительных полей")
   void registrationWithAllFields() {
-    open("https://demoqa.com/automation-practice-form");
     registrationPage.fillFirstName(user.firstName)
                     .fillLastName(user.lastName)
                     .fillUserEmail(user.email)
