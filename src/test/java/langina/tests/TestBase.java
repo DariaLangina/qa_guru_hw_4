@@ -12,20 +12,16 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
-  static SelenoidConfig credentials = ConfigFactory.create(SelenoidConfig.class);
+  public static SelenoidConfig credentials = ConfigFactory.create(SelenoidConfig.class);
 
   @BeforeAll
   public static void config() {
-    Configuration.startMaximized = true;
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-    Configuration.remote = String.format("https://%s:%s@%s",
-                                         credentials.login(),
-                                         credentials.password(),
-                                         System.getProperty("selenoidUrl")
+    Configuration.startMaximized = true;
+    Configuration.remote = String.format("https://%s:%s@%s", credentials.login(),
+                                         credentials.password(), System.getProperty("selenoidUrl")
                                         );
-
-    //было: Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("enableVNC", true);

@@ -18,7 +18,6 @@ public class StudentRegistration extends TestBase {
   }
 
   @Test
-  @Tag("properties")
   @Tag("owner")
   @DisplayName("Регистрация с заполнением дополнительных полей")
   void registrationWithAllFields() {
