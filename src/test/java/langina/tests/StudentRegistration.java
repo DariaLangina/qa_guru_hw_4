@@ -4,6 +4,7 @@ import langina.pages.RegistrationData;
 import langina.pages.RegistrationPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class StudentRegistration extends TestBase {
@@ -17,6 +18,8 @@ public class StudentRegistration extends TestBase {
   }
 
   @Test
+  @Tag("properties")
+  @Tag("owner")
   @DisplayName("Регистрация с заполнением дополнительных полей")
   void registrationWithAllFields() {
     registrationPage.fillFirstName(user.firstName)

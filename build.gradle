@@ -25,6 +25,7 @@ dependencies {
             "org.aspectj:aspectjweaver:1.9.6",
             "com.codeborne:selenide:$selenideVersion",
             "com.github.javafaker:javafaker:1.0.2",
+            "org.aeonbits.owner:owner:1.0.12",
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion")
     testRuntimeOnly(
@@ -50,4 +51,12 @@ tasks.withType(Test) {
         }
     }
 }
+
+task properties_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "properties"
+        includeTags "owner"
+    }
+}
+
 
