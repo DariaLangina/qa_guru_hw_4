@@ -1,4 +1,4 @@
-package helpers;
+package langina.helpers;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
