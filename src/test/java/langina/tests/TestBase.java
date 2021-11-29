@@ -12,10 +12,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
-  public static SelenoidConfig credentials = ConfigFactory.create(SelenoidConfig.class);
-
   @BeforeAll
   public static void config() {
+    SelenoidConfig credentials = ConfigFactory.create(SelenoidConfig.class);
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     Configuration.startMaximized = true;
