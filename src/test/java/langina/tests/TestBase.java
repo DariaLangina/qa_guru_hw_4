@@ -1,5 +1,7 @@
 package langina.tests;
 
+import static java.lang.String.format;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -18,9 +20,9 @@ public class TestBase {
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
     Configuration.startMaximized = true;
-    Configuration.remote = String.format("https://%s:%s@%s", credentials.login(),
-                                         credentials.password(), System.getProperty("selenoidUrl")
-                                        );
+    Configuration.remote = format("https://%s:%s@%s", credentials.login(),
+                                  credentials.password(), System.getProperty("selenoidUrl")
+                                 );
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("enableVNC", true);
